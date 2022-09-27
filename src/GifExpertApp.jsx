@@ -6,6 +6,9 @@ export const GifExpertApp = () => {
     const [categories, setCategories] = useState(['Naruto', 'Dragon Ball', 'Bleach']);
 
     const onAddCategory = (newValue) => {
+
+        if( categories.some( category => category.toLowerCase() === newValue.toLowerCase() )) return 
+           
         setCategories([ newValue, ...categories]);
     }
 
